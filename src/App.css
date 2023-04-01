@@ -2,6 +2,12 @@
   width: 35rem;
   max-width: 90%;
   margin: 3rem auto;
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: white;
+  background: #d68e8e;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
 }
 
 #goal-form {
@@ -9,6 +15,6 @@
   max-width: 90%;
   margin: 3rem auto;
   padding: 2rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 7px 40px hwb(0 96% 3% / 0.2);
   border-radius: 10px;
 }
