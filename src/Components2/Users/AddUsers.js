@@ -6,6 +6,7 @@ import Wrapper from "../Helper/Wrapper";
 const AddUser =(props) => {
     const nameInputRef = useRef();
     const ageInputRef = useRef();
+    const collegeNameInputRef = useRef();
 
    const [error, setError] = useState();
     
@@ -13,6 +14,8 @@ const AddUser =(props) => {
         event.preventDefault();
         const enteredUsername = nameInputRef.current.value;
         const enteredAge = ageInputRef.current.value;
+        const enteredCollegeName = collegeNameInputRef.current.value;
+       
         if(enteredUsername.trim().length === 0 || enteredAge.trim().length === 0){
             setError({title:'Invalid Input',message:'Please Input Username and Age Cant Leave Blank'});
             return;
@@ -21,9 +24,10 @@ const AddUser =(props) => {
             setError({title:'Invalid Age',message:'Please Input Correct Age Or Cant Leave Blank'});
             return;
         }
-        props.onAddUser(enteredUsername,enteredAge);
+        props.onAddUser(enteredUsername,enteredAge,enteredCollegeName);
         nameInputRef.current.value='';
         ageInputRef.current.value='';
+        collegeNameInputRef.current.value='';
     };
   
     const errorHandler = () => {
@@ -40,6 +44,8 @@ const AddUser =(props) => {
             <input id="username" type="text"  ref={nameInputRef} />
             <label htmlFor="age">AGE (YEARS)</label>
             <input id="age" type="number"  ref={ageInputRef}/>
+            <label htmlFor="CN">COLLEGE NAME</label>
+            <input id="CN" type="text"  ref={collegeNameInputRef}/>
             <button className="button" type="submit">ADD USER</button>
         </form>
         </div>
