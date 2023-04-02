@@ -11,14 +11,14 @@ const [userList, setUserList] = useState([]);
   });
  }
   return (
-   <div>
+   <React.Fragment>
       <div id='goal-form'>
       <AddUser onAddUser={addUserHandler}/>
       </div>
       <div id='goals'>
         <UsersList users={userList} />
       </div>
-   </div>
+   </React.Fragment>
   );
 }
 
